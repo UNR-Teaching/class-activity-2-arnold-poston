@@ -9,7 +9,7 @@ class Board(object):
         """
         Initializes the Board of size 3x3
         """
-        self.board = ["___"] * 3
+        self.board = [['_'] * 3] * 3
 
         pass
 
@@ -32,7 +32,7 @@ class Board(object):
         if self.board[row][column] != '_':
             return False
         else:
-            self.board[row][column] = player
+            self.board[row] = player
 
         return True
         pass
