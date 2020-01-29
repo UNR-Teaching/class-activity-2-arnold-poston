@@ -34,8 +34,17 @@ class Board(object):
         if self.board[row][column] != '_':
             return False
 
-
-        self.board[row] = player
+        print(row, column, player)
+        print("@@@@@@@@@@@@@")
+        for i in range(3):
+            for j in range(3):
+                print(self.board[i][j])
+        print("@@@@@@@@@@@@@")
+        self.board[row][column] = player
+        for i in range(3):
+            for j in range(3):
+                print(self.board[i][j])
+        print("@@@@@@@@@@@@@")
         return True
         pass
 
@@ -82,6 +91,14 @@ class Board(object):
         return False
         pass
 
+
+    def print(self):
+        for row in self.board:
+            for element in row:
+                print(element, end='')
+            print('')
+
+
     def play_game(self):
         """
         Takes moves from raw_input as comma-separated list in form (column, row, player)
@@ -89,7 +106,18 @@ class Board(object):
         
         :return: (str) the letter representing the player who won
         """
-        
+        self.print()
+        while not self.has_winner():
+          user_entered_data = input("Enter in a move in the form (column, row, player)")
+          user_entered_data = user_entered_data.replace(' ', '')
+          column, row, player = user_entered_data.split(',')
+
+          # Can break if column or row is not int
+          column = int(column)
+          row = int(row)
+
+          self.mark_square(column, row, player)
+          self.print()
         pass
         
 if __name__ == '__main__':
