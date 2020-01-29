@@ -23,7 +23,18 @@ class Board(object):
 
         :return: ????
         """
+        if column < 0 or column > 2:
+            raise Exception("Column out of bounds")
 
+        if row < 0 or row > 2:
+            raise Exception("Row out of bounds")
+
+        if self.board[row][column] != '_':
+            return False
+        else:
+            self.board[row][column] = player
+
+        return True
         pass
 
     def has_winner(self):
