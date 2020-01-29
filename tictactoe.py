@@ -64,7 +64,7 @@ class Board(object):
 
         :return: ????
         """
-        for i in range(0, 2):
+        for i in range(0, 3):
             if (self.board[i][0] == self.board[i][1]) and (self.board[i][1] == self.board[i][2]) \
                     and (self.board[i][0] != '_'):
                 return self.board[i][0]
