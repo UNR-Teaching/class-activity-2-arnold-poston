@@ -31,11 +31,11 @@ class Board(object):
         if not self.check_valid_player(player):
             return False
 
-
         if self.board[row][column] != '_':
             return False
 
         self.board[row][column] = player
+
         return True
         pass
 
@@ -86,7 +86,7 @@ class Board(object):
     def print(self):
         for row in self.board:
             for element in row:
-                print(element, end='')
+                print(element+" ", end='')
             print('')
 
 

@@ -34,23 +34,23 @@ class HasWinnerTests(unittest.TestCase):
         self.tictactoe.board = self.staleMateBoard
         self.assertFalse(self.tictactoe.has_winner())
 
-    def test_RowWinner(self):
+    def test_row_winner(self):
         self.tictactoe.board = self.winnerRowBoard
         self.assertEqual(self.tictactoe.has_winner(), 'X')
 
-    def test_ColWinner(self):
+    def test_col_winner(self):
         self.tictactoe.board = self.winnerColBoard
         self.assertEqual(self.tictactoe.has_winner(), 'O')
 
-    def test_emptyBoardNoWinner(self):
+    def test_empty_board_no_winner(self):
         self.tictactoe.board = self.emptyBoard
         self.assertFalse(self.tictactoe.has_winner())
 
-    def test_rightDiagonalWinner(self):
+    def test_right_diagonal_winner(self):
         self.tictactoe.board = self.rightDiagonalWinner
         self.assertEqual(self.tictactoe.has_winner(), 'X')
 
-    def test_leftDiagonalWinner(self):
+    def test_left_diagonal_winner(self):
         self.tictactoe.board = self.leftDiagonalWinner
         self.assertEqual(self.tictactoe.has_winner(), 'X')
 
