@@ -9,7 +9,7 @@ class Board(object):
         """
         Initializes the Board of size 3x3
         """
-
+        self.board = ["___"] * 3
 
         pass
 
