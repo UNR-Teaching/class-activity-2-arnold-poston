@@ -10,6 +10,7 @@ class Board(object):
         Initializes the Board of size 3x3
         """
 
+
         pass
 
     def mark_square(self, column, row, player):
