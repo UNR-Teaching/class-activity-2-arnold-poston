@@ -9,8 +9,9 @@ class Board(object):
         """
         Initializes the Board of size 3x3
         """
-        self.board = [['_'] * 3] * 3
-
+        self.board = [['_', '_', '_'],
+                      ['_', '_', '_'],
+                      ['_', '_', '_']]
         pass
 
     def mark_square(self, column, row, player):
@@ -34,17 +35,7 @@ class Board(object):
         if self.board[row][column] != '_':
             return False
 
-        print(row, column, player)
-        print("@@@@@@@@@@@@@")
-        for i in range(3):
-            for j in range(3):
-                print(self.board[i][j])
-        print("@@@@@@@@@@@@@")
         self.board[row][column] = player
-        for i in range(3):
-            for j in range(3):
-                print(self.board[i][j])
-        print("@@@@@@@@@@@@@")
         return True
         pass
 
@@ -107,7 +98,7 @@ class Board(object):
         :return: (str) the letter representing the player who won
         """
         self.print()
-        while not self.has_winner():
+        while not self.has_winner() and not self.check_full_board():
           user_entered_data = input("Enter in a move in the form (column, row, player)")
           user_entered_data = user_entered_data.replace(' ', '')
           column, row, player = user_entered_data.split(',')
@@ -118,6 +109,7 @@ class Board(object):
 
           self.mark_square(column, row, player)
           self.print()
+        return self.has_winner()
         pass
         
 if __name__ == '__main__':
