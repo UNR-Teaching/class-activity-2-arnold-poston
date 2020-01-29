@@ -51,6 +51,13 @@ class Board(object):
             return True
         return False
 
+    def check_full_board(self):
+        for row in self.board:
+            for character in row:
+                if character == '_':
+                    return False
+        return True
+
     def has_winner(self):
         """
         Checks to see if there is a current winner of the game
