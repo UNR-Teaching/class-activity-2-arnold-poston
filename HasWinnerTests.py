@@ -22,13 +22,13 @@ class HasWinnerTests(unittest.TestCase):
                            ['_', '_', '_'],
                            ['_', '_', '_']]
 
-        self.rightDiagonalWinner = [['X', 'O', 'X'],
+        self.rightDiagonalWinner = [['_', 'O', 'X'],
                                     ['O', 'X', 'X'],
-                                    ['X', 'O', 'O']]
+                                    ['X', '_', 'O']]
 
         self.leftDiagonalWinner = [['X', 'O', 'O'],
-                                    ['O', 'X', 'X'],
-                                    ['X', 'O', 'X']]
+                                    ['O', 'X', '_'],
+                                    ['X', '_', 'X']]
 
     def test_stalemate(self):
         self.tictactoe.board = self.staleMateBoard
