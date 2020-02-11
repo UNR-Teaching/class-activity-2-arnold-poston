@@ -10,7 +10,7 @@ class Player(object):
         self.playerNumber = next(self._ids)
 
     def getMove(self):
-        user_entered_data = input("Enter in a move in the form (column, row, player)")
+        user_entered_data = input("Player {} enter in a move in the form (column, row)".format(self._ids))
         user_entered_data = user_entered_data.replace(' ', '')
         column, row = user_entered_data.split(',')
 
