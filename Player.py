@@ -12,11 +12,21 @@ class Player(object):
     def getMove(self):
         user_entered_data = input("Enter in a move in the form (column, row, player)")
         user_entered_data = user_entered_data.replace(' ', '')
-        column, row, player = user_entered_data.split(',')
+        column, row = user_entered_data.split(',')
 
         # Can break if column or row is not int
         column = int(column)
         row = int(row)
+
+        while not self.check_valid_row_column(column, row):
+            user_entered_data = input("Enter in a move in the form (column, row, player)")
+            user_entered_data = user_entered_data.replace(' ', '')
+            column, row, player = user_entered_data.split(',')
+
+            # Can break if column or row is not int
+            column = int(column)
+            row = int(row)
+
         return column, row
 
     def check_valid_row_column(self, column, row):
