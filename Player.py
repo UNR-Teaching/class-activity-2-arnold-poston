@@ -10,7 +10,7 @@ class Player(object):
         self.playerNumber = next(self._ids)
 
     def getMove(self):
-        user_entered_data = input("Player {} enter in a move in the form (column, row)".format(self._ids))
+        user_entered_data = input("Player {} enter in a move in the form (column, row)".format(self.playerNumber))
         user_entered_data = user_entered_data.replace(' ', '')
         column, row = user_entered_data.split(',')
 
@@ -19,9 +19,10 @@ class Player(object):
         row = int(row)
 
         while not self.check_valid_row_column(column, row):
-            user_entered_data = input("Enter in a move in the form (column, row, player)")
+            print("You have entered an invalid move, please try again.")
+            user_entered_data = input("Player {} enter in a move in the form (column, row)".format(self.playerNumber))
             user_entered_data = user_entered_data.replace(' ', '')
-            column, row, player = user_entered_data.split(',')
+            column, row = user_entered_data.split(',')
 
             # Can break if column or row is not int
             column = int(column)
