@@ -16,7 +16,6 @@ class GameDriver(object):
         :return: (str) the letter representing the player who won
         """
 
-
         self.board.print()
         while not self.board.has_winner() and not self.board.check_full_board():
             user_entered_data = input("Enter in a move in the form (column, row, player)")
@@ -29,5 +28,7 @@ class GameDriver(object):
 
             self.board.mark_square(column, row, player)
             self.board.print()
+
+
         return self.board.has_winner()
         pass

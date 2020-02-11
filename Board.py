@@ -20,9 +20,6 @@ class Board(object):
 
         :return: ????
         """
-        if not self.check_valid_row_column(column, row):
-            return False
-
         if self.board[row][column] != '_':
             return False
 
@@ -30,13 +27,6 @@ class Board(object):
 
         return True
         pass
-
-    def check_valid_row_column(self, column, row):
-        if column < 0 or column > 2:
-            return False
-        if row < 0 or row > 2:
-            return False
-        return True
 
     def check_full_board(self):
         for row in self.board:
