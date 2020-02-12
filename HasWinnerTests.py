@@ -1,5 +1,5 @@
 import unittest
-from tictactoe import Board
+from Board import Board
 
 
 class HasWinnerTests(unittest.TestCase):
