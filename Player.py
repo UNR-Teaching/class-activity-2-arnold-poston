@@ -6,7 +6,7 @@ class Player(object):
     _ids = count(1)
 
     def __init__(self, playerCharacter):
-        # The single character to represent the players move on the board
+        # The single character to represent the players move on the player
         self.playerCharacter = playerCharacter
         if not self.check_valid_player():
             try:
@@ -51,6 +51,3 @@ class Player(object):
 
     def check_valid_player(self):
         return isinstance(self.playerCharacter, str) and len(self.playerCharacter) == 1
-
-p = Player("x")
-p.getMove()
