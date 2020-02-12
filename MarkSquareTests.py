@@ -1,13 +1,13 @@
 import unittest
-import tictactoe
+from Board import Board
 
 
 class MarkSquareTests(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.emptyTicTacToe = tictactoe.Board()
-        self.almostFilledTicTacToe = tictactoe.Board()
-        self.beforeAfterTest = tictactoe.Board()
+        self.emptyTicTacToe = Board()
+        self.almostFilledTicTacToe = Board()
+        self.beforeAfterTest = Board()
 
         self.almostFilledTicTacToe.board = [['X', 'O', 'X'],
                                             ['X', '_', 'O'],
