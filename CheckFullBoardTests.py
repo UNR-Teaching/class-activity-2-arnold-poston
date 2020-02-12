@@ -1,17 +1,17 @@
 import unittest
-import tictactoe
+from Board import Board
 
 
 class CheckFullBoardTests(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.emptyTicTacToe = tictactoe.Board()
-        self.fullTicTacToe = tictactoe.Board()
+        self.emptyTicTacToe = Board()
+        self.fullTicTacToe = Board()
         self.fullTicTacToe.board = [['X', 'O', 'X'],
                                     ['X', 'X', 'O'],
                                     ['O', 'X', 'O']]
 
-        self.halfEmptyTicTacToe = tictactoe.Board()
+        self.halfEmptyTicTacToe = Board()
         self.halfEmptyTicTacToe.board = [['X', '_', 'O'],
                                     ['_', '_', '_'],
                                     ['O', 'X', '_']]
