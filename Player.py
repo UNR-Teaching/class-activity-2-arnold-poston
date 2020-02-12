@@ -40,7 +40,7 @@ class Player(object):
                 # Can break if column or row is not int
                 column = int(column)
                 row = int(row)
-        return row, column
+        return row, column, self.playerCharacter
 
     def check_valid_row_column(self, column, row):
         if column < 0 or column > 2:

@@ -5,5 +5,4 @@ from GameDriver import GameDriver
         
 if __name__ == '__main__':
     ticTacToe = GameDriver()
-    winner = GameDriver.play_game()
-    print("{} has won!".format(winner))
+    ticTacToe.play_game()
