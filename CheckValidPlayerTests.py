@@ -1,22 +1,16 @@
 import unittest
-import tictactoe
+from Player import Player
 
 
 class CheckValidPlayerTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.board = tictactoe.Board()
+        self.playerO = Player('X')
 
     def test_O_player(self):
-        self.assertTrue(self.board.check_valid_player('O'))
-
-    def test_X_player(self):
-        self.assertTrue(self.board.check_valid_player('X'))
-
-    def test_W_player(self):
-        self.assertFalse(self.board.check_valid_player('W'))
+        self.assertTrue(self.playerO.check_valid_player())
 
     def test_integer_player(self):
-        self.assertFalse(self.board.check_valid_player(2))
+        self.assertRaises(ValueError, Player, 2)
 
 
 if __name__ == '__main__':

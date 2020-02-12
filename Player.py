@@ -8,10 +8,17 @@ class Player(object):
     def __init__(self, playerCharacter):
         # The single character to represent the players move on the board
         self.playerCharacter = playerCharacter
+        if not self.check_valid_player():
+            try:
+                raise ValueError
+            except ValueError:
+                print("Invalid playerCharacter on Player creation")
+                raise
+
         self.playerNumber = next(self._ids)
 
     def getMove(self):
-        correctInputPattern = re.compile("\s*-?[0-9]\s*,\s*-?[0-9]\s*$")
+        correctInputPattern = re.compile(r"\s*-?[0-9]\s*,\s*-?[0-9]\s*$")
         user_entered_data = input("Player {} enter in a move in the form (row, column)".format(self.playerNumber))
         column = -1
         row = -1
@@ -42,5 +49,8 @@ class Player(object):
             return False
         return True
 
-player = Player("s")
-player.getMove()
+    def check_valid_player(self):
+        return isinstance(self.playerCharacter, str) and len(self.playerCharacter) == 1
+
+p = Player("x")
+p.getMove()
